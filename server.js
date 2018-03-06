@@ -3,6 +3,7 @@ var express = require('express'),
   port = process.env.PORT || 3000,
   mongoose = require('mongoose'),
   VRNHeader = require('./api/models/VRNHeaderModel'), //created model loading here
+  VRNDetail = require('./api/models/VRNDetailModel'), //created model loading here
   bodyParser = require('body-parser');
   
 // mongoose instance connection url connection
