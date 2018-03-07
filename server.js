@@ -4,6 +4,10 @@ var express = require('express'),
   mongoose = require('mongoose'),
   VRNHeader = require('./api/models/VRNHeaderModel'), //created model loading here
   VRNDetail = require('./api/models/VRNDetailModel'), //created model loading here
+  License = require('./api/models/LicenseModel'),
+  LicenseRegion = require('./api/models/LicenseRegion'),
+  TransporterModel = require('./api/models/TransporterModel'),
+  VehicleModel = require('./api/models/VehicleModel'),
   bodyParser = require('body-parser');
   
 // mongoose instance connection url connection
@@ -14,15 +18,11 @@ mongoose.connect('mongodb://admin:admin123@cluster0-shard-00-00-lrnbl.mongodb.ne
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-
-var routes = require('./api/routes/VRNHeaderRoutes'); //importing route
+var routes = require('./api/routes/Routes'); //importing route
 routes(app); //register the route
 
 app.use(function(req, res) {
-    res.status(404).send({url: req.originalUrl + ' not found'})
-  });
+  res.status(404).send({url: req.originalUrl + ' not found'})
+});
 
 app.listen(port);
-
-
-console.log('VRN list RESTful API server started on: ' + port);
