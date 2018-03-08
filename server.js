@@ -6,6 +6,7 @@ var express = require('express'),
   VRNDetail = require('./api/models/VRNDetailModel'), //created model loading here
   License = require('./api/models/LicenseModel'),
   LicenseRegion = require('./api/models/LicenseRegion'),
+  ParamsModel = require('./app/models/ParamsModel'),
   TransporterModel = require('./api/models/TransporterModel'),
   VehicleModel = require('./api/models/VehicleModel'),
   bodyParser = require('body-parser');
